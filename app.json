@@ -1,5 +1,5 @@
 {
-    "name": "slam-tg-mirror-bot",
+    "name": "DK's AUTOMATIC MIRROR",
     "description": "A Telegram bot for all your mirror needs",
     "logo": "https://telegra.ph/file/6507910fd06d18dfaba82.jpg",
     "keywords": [
@@ -7,8 +7,8 @@
       "telegram",
       "python"
     ],
-    "repository": "https://github.com/breakdowns/slam-tg-mirror-bot",
-    "website": "https://github.com/breakdowns/slam-tg-mirror-bot",
+    "repository": "https://github.com/achukuttanTG/HaHa",
+    "website": "https://github.com/achukuttanTG/HaHa",
     "success_url": "https://t.me/SlamMirrorSupport",
     "stack": "container",
     "env": {
@@ -80,7 +80,7 @@
       },
       "UPSTREAM_REPO": {
         "description": "Link for Bot Upstream Repo, If you want default update, Fill https://github.com/breakdowns/slam-tg-mirror-bot.",
-        "value": "https://github.com/breakdowns/slam-tg-mirror-bot",
+        "value": "https://github.com/achukuttanTG/HaHa",
         "required": true
       },
       "UPSTREAM_BRANCH": {
