@@ -151,9 +151,8 @@ class MirrorListener(listeners.MirrorListeners):
                 msg += f'\n<b>SubFolders: </b><code>{folders}</code>'
                 msg += f'\n<b>Files: </b><code>{files}</code>'
             else:
-                msg += f'\n<b>Type: </b><code>{typ}</code>'
-
-                msg += f'\n<b>#𝖠𝖻𝖮𝗎𝗍𝖬𝖾_𝖣𝖪</b>
+                msg += f'\n<b>Type: </b><code>{typ}</code>\n\n'
+                msg += f'\n<b> #𝖠𝖻𝖮𝗎𝗍𝖬𝖾_𝖣𝖪 </b>
             buttons = button_build.ButtonMaker()
             if SHORTENER is not None and SHORTENER_API is not None:
                 link=json.loads(requests.get('http://cutt.ly/api/api.php?key={}&short={}'.format(ckey, link)).text)['url']
