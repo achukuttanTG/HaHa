@@ -152,15 +152,17 @@ class MirrorListener(listeners.MirrorListeners):
                 msg += f'\n<b>Files: </b><code>{files}</code>'
             else:
                 msg += f'\n<b>Type: </b><code>{typ}</code>'
+
+                msg += f'\n<b>#𝖠𝖻𝖮𝗎𝗍𝖬𝖾_𝖣𝖪</b>
             buttons = button_build.ButtonMaker()
             if SHORTENER is not None and SHORTENER_API is not None:
                 link=json.loads(requests.get('http://cutt.ly/api/api.php?key={}&short={}'.format(ckey, link)).text)['url']
                 link=link['shortLink']
                 print(link)
                 surl = requests.get(f'https://{SHORTENER}/api/{SHORTENER_API}?s={link}').text
-                buttons.buildbutton("☁️ Drive Link", surl)
+                buttons.buildbutton("Dʀɪᴠᴇ Lɪɴᴋ", surl)
             else:
-                buttons.buildbutton("☁️ Drive Link", link)
+                buttons.buildbutton("Dʀɪᴠᴇ Lɪɴᴋ", link)
             LOGGER.info(f'Done Uploading {download_dict[self.uid].name()}')
             if INDEX_URL is not None:
                 url_path = requests.utils.quote(f'{download_dict[self.uid].name()}')
@@ -173,9 +175,9 @@ class MirrorListener(listeners.MirrorListeners):
                         share_url=share_url['shortLink']
                         print(share_url)
                         siurl = requests.get(f'https://{SHORTENER}/api/{SHORTENER_API}?s={share_url}').text#['shortLink']
-                        buttons.buildbutton("⚡ Index Link", siurl)
+                        buttons.buildbutton("Iɴᴅᴇx Lɪɴᴋ", siurl)
                     else:
-                        buttons.buildbutton("⚡ Index Link", share_url)
+                        buttons.buildbutton("Iɴᴅᴇx Lɪɴᴋ", share_url)
                 else:
                     share_urls = f'{INDEX_URL}/{url_path}?a=view'
                     if SHORTENER is not None and SHORTENER_API is not None:
@@ -191,13 +193,13 @@ class MirrorListener(listeners.MirrorListeners):
                         siurl = requests.get(f'https://{SHORTENER}/api/{SHORTENER_API}?s={share_url}').text
                         #print(json.loads(requests.get('http://cutt.ly/api/api.php?key={}&short={}'.format(ckey, share_urls)).text)['url'],json.loads(requests.get('http://cutt.ly/api/api.php?key={}&short={}'.format(ckey, share_url)).text)['url'])
                         siurls = requests.get(f'https://{SHORTENER}/api/{SHORTENER_API}?s={share_urls}').text
-                        buttons.buildbutton("⚡ Index Link", siurl)
+                        buttons.buildbutton("Iɴᴅᴇx Lɪɴᴋ", siurl)
                         if VIEW_LINK:
-                            buttons.buildbutton("🌐 View Link", siurls)
+                            buttons.buildbutton("Vɪᴇᴡ Lɪɴᴋ", siurls)
                     else:
-                        buttons.buildbutton("⚡ Index Link", share_url)
+                        buttons.buildbutton("Iɴᴅᴇx Lɪɴᴋ", share_url)
                         if VIEW_LINK:
-                            buttons.buildbutton("🌐 View Link", share_urls)
+                            buttons.buildbutton("Vɪᴇᴡ Lɪɴᴋ", share_urls)
             if BUTTON_FOUR_NAME is not None and BUTTON_FOUR_URL is not None:
                 buttons.buildbutton(f"{BUTTON_FOUR_NAME}", f"{BUTTON_FOUR_URL}")
             if BUTTON_FIVE_NAME is not None and BUTTON_FIVE_URL is not None:
