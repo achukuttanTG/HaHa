@@ -48,22 +48,22 @@ def stats(update, context):
 def start(update, context):
     
     start_string = f'''
-This bot can mirror all your links to Google Drive!
-Type /{BotCommands.HelpCommand} to get a list of available commands
+𝖨 𝖺𝗆 𝖺 𝖠𝗎𝗍𝗈𝖬𝗂𝗋𝗋𝗈𝗋 𝖡𝗈𝗍 𝖮𝖿𝖿𝗂𝖼𝗂𝖺𝗅𝗅𝗒 𝖬𝖺𝖽𝖾 𝖳𝗈 𝖬𝗂𝗋𝗋𝗈𝗋 𝖳𝖦 𝖥𝗂𝗅𝖾𝗌 𝖥𝗈𝗋 𝖮𝗎𝗋 𝖯𝗋𝗂𝗏𝖺𝗍𝖾 𝖴𝗌𝖾!
+𝖧𝗂𝗍 /{BotCommands.HelpCommand} 𝗍𝗈 𝗀𝖾𝗍 𝖺𝗅𝗅 𝖺𝗏𝖺𝗂𝗅𝖺𝖻𝗅𝖾 𝖼𝗈𝗆𝗆𝖺𝗇𝖽𝗌.
 '''
     buttons = button_build.ButtonMaker()
-    buttons.buildbutton("Repo", "https://github.com/breakdowns/slam-tg-mirror-bot")
-    buttons.buildbutton("Channel", "https://t.me/SlamMirrorUpdates")
+    buttons.buildbutton("𝖢𝗁𝖺𝗇𝗇𝖾𝗅", "https://t.me/DK_BOTx")
+    buttons.buildbutton("𝖲𝗎𝗉𝗉𝗈𝗋𝗍", "https://t.me/DKBOTXCHATS")
     reply_markup = InlineKeyboardMarkup(buttons.build_menu(2))
     LOGGER.info('UID: {} - UN: {} - MSG: {}'.format(update.message.chat.id, update.message.chat.username, update.message.text))
     uptime = get_readable_time((time.time() - botStartTime))
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         if update.message.chat.type == "private" :
-            sendMessage(f"Hey I'm Alive 🙂\nSince: <code>{uptime}</code>", context.bot, update)
+            sendMessage(f"𝖢𝗁𝖺𝗍𝗁𝗂𝗍𝗍𝗂𝗅𝖺, 𝖤𝗇𝗍𝗁𝖺𝖽𝖺 𝖪𝗈𝗅𝗅𝖺𝗇𝗈 𝖾𝗇𝗇𝖾 🙂\nSince: <code>{uptime}</code>", context.bot, update)
         else :
             sendMarkup(start_string, context.bot, update, reply_markup)
     else :
-        sendMarkup(f"Oops! not a Authorized user.\nPlease deploy your own <b>slam-tg-mirror-bot</b>.", context.bot, update, reply_markup)
+        sendMarkup(f"𝖠𝗒𝗒𝖺𝗇𝗍𝖾 𝖬𝗈𝗐𝗇𝖾, 𝖭𝖾𝖾 𝖤𝗍𝗁𝖺𝖽𝖺 𝖲𝗆𝖺𝗅𝗅 𝖪𝖾𝗅𝗅𝖺.\n 𝖡𝗈𝗍 𝗆𝖺𝖽𝖾 𝖻𝗒 𝗍𝗁𝖾 𝖳𝖾𝖺𝗆 #𝙏𝙊𝙑𝙄𝙉𝙊ᵇᵒᵗ.", context.bot, update, reply_markup)
 
 def fileshandler(update,context ):
         print('file')
